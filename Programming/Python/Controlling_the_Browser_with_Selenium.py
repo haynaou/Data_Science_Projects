@@ -14,7 +14,7 @@ element.click()
 
 # # finding element from the search bar:
 browser.back()
-searchElement= browser.find_element_by_css_selector('#twotabsearchtextbox')
+searchElement = browser.find_element_by_css_selector('#twotabsearchtextbox')
 searchElement.send_keys('coffee')
 searchElement.submit()
 
@@ -23,7 +23,7 @@ searchElement.submit()
 
 #Reading the content of the webpage:
 website = browser.get('https://houdaaynaou.com')
-about= browser.find_element_by_css_selector('.nav-container > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)')
+about = browser.find_element_by_css_selector('.nav-container > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)')
 about.click()
 read_text = browser.find_element_by_css_selector('body > main:nth-child(2) > p:nth-child(4)')
 print(read_text.text)
@@ -34,7 +34,7 @@ print(read_text.text)
 
 #Reading html:
 website = browser.get('https://selenium-python.readthedocs.io')
-webHtml= browser.find_element_by_css_selector('html')
+webHtml = browser.find_element_by_css_selector('html')
 print(webHtml.text)
 
 
