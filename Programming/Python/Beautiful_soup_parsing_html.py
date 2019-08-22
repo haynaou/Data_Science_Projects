@@ -1,17 +1,20 @@
-import bs4, requests
+import requests,bs4
+'''This function returns the price of the product'''
 
 def ebay_price_tag(url):
     r = requests.get(url)
     soup = bs4.BeautifulSoup(r.text, 'html.parser')
 
+    #get product_name
     product_name_tag = soup.select('#itemTitle')
     product_name = product_name_tag[0].contents[1]
 
+    #get product_price
     price_tag = soup.select('#prcIsum')
     price = price_tag[0].text
     price = price.replace('US', '').replace('$', '').strip()
 
-
+    #print product_name and produt price
     print('The price for', product_name, 'is:',price, '\n')
 
 
